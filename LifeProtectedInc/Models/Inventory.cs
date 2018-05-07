@@ -21,5 +21,7 @@ namespace LifeProtectedInc.Models
         [DataType(DataType.Currency)]
         [Column(TypeName = "money")]
         public int ProductAmount { get; set; }
+
+        public virtual ICollection<Supervisor> Supervisors { get; set; }
     }
 }

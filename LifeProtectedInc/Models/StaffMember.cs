@@ -6,26 +6,26 @@ using System.Threading.Tasks;
 
 namespace LifeProtectedInc.Models
 {
-    public class Superviser
+    public class StaffMember
     {
-        public int SuperviserID { get; set; }//Pk
+        public int StaffMemberID { get; set; }//Pk
 
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Display(Name = "Last Name")]
-        public string LastName { get; set; }
-
+        public string LastName  { get; set; }
 
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-
 
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
 
 
-        public int ServiceBudgetID  { get; set; }//Fk
-        public int InventoryID { get; set; }//Fk
+        public virtual ICollection<Client> Clients{ get; set; }
+        public virtual Department Department { get; set; }
+
+
     }
 }

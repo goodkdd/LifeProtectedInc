@@ -27,13 +27,10 @@ namespace LifeProtectedInc.Models
         [StringLength(60)]
         public string City { get; set; }
 
-
-
         [Required]
         [StringLength(2)]
         [Column(TypeName = "nchar(2)")]
         public string Province { get; set; }
-
 
         [Display(Name = "Postal Code")]
         [Required]
@@ -42,11 +39,17 @@ namespace LifeProtectedInc.Models
         [DataType(DataType.PostalCode)]
         public string PostalCode { get; set; }
 
-
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        public int EmployeeID { get; set; }//Fk
-        public int SuperviserID { get; set; }//Fk
+
+
+        public int StaffMemberID { get; set; }//Fk
+        public int SupervisorID { get; set; }//Fk
+
+
+
+        public virtual StaffMember StaffMember { get; set; }
+        public virtual Supervisor Supervisor { get; set; }
 
     }
 }

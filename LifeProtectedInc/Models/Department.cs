@@ -13,7 +13,13 @@ namespace LifeProtectedInc.Models
         [Required]
         [StringLength(50, MinimumLength = 3)]
         public string DepartmentName { get; set; }
-        public int EmployeeID { get; set; }//Fk
-        public  int SuperviserID  { get; set; }//Fk
+
+
+        public int StaffMemberID { get; set; }//Fk
+        public  int SupervisorID  { get; set; }//Fk
+
+        public virtual ICollection<StaffMember> StaffMembers { get; set; }
+        public virtual ICollection<Supervisor> Supervisors { get; set; }
+        public virtual ICollection<ServiceBudget> ServiceBudgets { get; set; }
     }
 }
