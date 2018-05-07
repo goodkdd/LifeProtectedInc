@@ -13,7 +13,7 @@ namespace LifeProtectedInc.Data
             //===========================================Client=================================================//
             if (context.Clients.Any())
             {
-                return;   // DB has been seeded
+                return;   
             }
 
             var clients = new Client[]
