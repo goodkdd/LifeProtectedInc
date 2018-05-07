@@ -25,6 +25,6 @@ namespace LifeProtectedInc.Data
         public DbSet<Inventory> Inventories { get; set; }
 
 
-   
+   //helo
     }
 }
