@@ -10,38 +10,48 @@ namespace LifeProtectedInc.Data
     {
         public static void Initialize(LifeContext context)
         {
-            //===========================================Client=================================================//
-            if (context.Clients.Any())
+
+            //===========================================Inventory==============================================//
+            if (context.Inventories.Any())
             {
-                return;   
+                return;
             }
-
-            var clients = new Client[]
-            {
-                new Client
+            var inventory = new Inventory[]
+      {
+                new Inventory
                 {
-                    Name ="Dywane Johnson",
-                    Phone ="506-555-6598",
-                    Address = "46 drive avenue",
-                    City = "Moncton",
-                    Province = "NB",
-                    PostalCode="E1C 0K6",
-                    Email ="TheRock@awsome.com"                  
+                    ProductNo=262,
+                    ProductName="Hand Cuff",
+                    ProductAmount=100
+
                 },
-
-                 new Client
+                new Inventory
                 {
-                    Name ="Will Smith",
-                    Phone ="506-555-3325",
-                    Address = "506 killer drive",
-                    City = "Moncton",
-                    Province = "NB",
-                    PostalCode="E1C 0K6",
-                    Email ="WilltheKill@dead.com"
-                }
+                    ProductNo=965,
+                    ProductName="AK-47",
+                    ProductAmount=8000
 
-            };
+                },
+                new Inventory
+                {
+                    ProductNo=785,
+                    ProductName="RPG",
+                    ProductAmount=20000
+
+                },
+             
+
+
+      };
+
+            foreach (Inventory i in inventory)
+            {
+                context.Inventories.Add(i);
+            }
+            context.SaveChanges();
+
             //===========================================StaffMember============================================//
+            
             var staffmember = new StaffMember[]
             {
                 new StaffMember
@@ -60,6 +70,11 @@ namespace LifeProtectedInc.Data
                 }
 
             };
+            foreach (StaffMember sm in staffmember)
+            {
+                context.StaffMembers.Add(sm);
+            }
+            context.SaveChanges();
 
             //===========================================Supervisor=============================================//
             var supervisor = new Supervisor[]
@@ -80,112 +95,51 @@ namespace LifeProtectedInc.Data
                 }
 
             };
+            foreach (Supervisor s in supervisor)
+            {
+                context.Supervisors.Add(s);
+            }
+            context.SaveChanges();
 
-            //===========================================Department=============================================//
-            var department = new Department[]
-          {
-                new Department
+            //===========================================Client=================================================//
+
+
+            var clients = new Client[]
+            {
+                new Client
                 {
-                    DepartmentName ="TransportSecurity"
-                    
+                    Name ="Dywane Johnson",
+                    Phone ="506-555-6598",
+                    Address = "46 drive avenue",
+                    City = "Moncton",
+                    Province = "NB",
+                    PostalCode="E1C 0K6",
+                    Email ="TheRock@awsome.com"
                 },
-                 new Department
+
+                 new Client
                 {
-                    DepartmentName ="GuardHouse"
-                    
-                },
-                 new Department
-                {
-                    DepartmentName ="PrivateSecurity"
-
-                },
-                 new Department
-                {
-                    DepartmentName ="DefenseTraining"
-
-                },
-                 new Department
-                {
-                    DepartmentName ="DataProtection"
-
-                }
-              
-
-          };
-
-            //===========================================ServiceBudget==========================================//
-            var servicebudget = new ServiceBudget[]
-         {
-                new ServiceBudget
-                {
-                   Amount= 300000
-
-                },
-                 new ServiceBudget
-                {
-                   Amount= 200000
-
-                },
-                  new ServiceBudget
-                {
-                   Amount= 800000
-
-                },
-                   new ServiceBudget
-                {
-                   Amount= 400000
-
-                },
-                    new ServiceBudget
-                {
-                   Amount= 900000
-
+                    Name ="Will Smith",
+                    Phone ="506-555-3325",
+                    Address = "506 killer drive",
+                    City = "Moncton",
+                    Province = "NB",
+                    PostalCode="E1C 0K6",
+                    Email ="WilltheKill@dead.com"
                 }
 
+            };
 
-         };
-
-            //===========================================Inventory==============================================//
-            var inventory = new Inventory[]
-      {
-                new Inventory
-                {
-                    ProductNo=26206
-
-                },
-                new Inventory
-                {
-                    ProductNo=96565
-
-                },
-                new Inventory
-                {
-                    ProductNo=78555
-
-                },
-                new Inventory
-                {
-                    ProductNo=2622206
-
-                },
-                new Inventory
-                {
-                    ProductNo=985548
-
-                },
-                new Inventory
-                {
-                    ProductNo=267666206
-
-                },
-                new Inventory
-                {
-                    ProductNo=767678
-
-                }
+            foreach (Client c in clients)
+            {
+                context.Clients.Add(c);
+            }
+            context.SaveChanges();
 
 
-      };
+
+
+
         }
     }
 }

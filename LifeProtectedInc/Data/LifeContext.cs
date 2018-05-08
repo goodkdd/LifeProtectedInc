@@ -20,11 +20,9 @@ namespace LifeProtectedInc.Data
         public DbSet<Client> Clients { get; set; }
         public DbSet<StaffMember> StaffMembers { get; set; }
         public DbSet<Supervisor> Supervisors { get; set; }
-        public DbSet<ServiceBudget> ServiceBudgets { get; set; }
-        public DbSet<ServiceBudget> Departments { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
 
 
-   //helo
+  
     }
 }

@@ -10,12 +10,15 @@ namespace LifeProtectedInc.Models
     {
         public int StaffMemberID { get; set; }//Pk
 
+        [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
+        [Required]
         [Display(Name = "Last Name")]
         public string LastName  { get; set; }
 
+        [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
@@ -24,7 +27,7 @@ namespace LifeProtectedInc.Models
 
 
         public virtual ICollection<Client> Clients{ get; set; }
-        public virtual Department Department { get; set; }
+  
 
 
     }

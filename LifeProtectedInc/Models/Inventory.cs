@@ -16,11 +16,11 @@ namespace LifeProtectedInc.Models
         [StringLength(50, MinimumLength = 3)]
         public string ProductName { get; set; }
 
-
-
         [DataType(DataType.Currency)]
         [Column(TypeName = "money")]
-        public int ProductAmount { get; set; }
+        public decimal ProductAmount { get; set; }
+
+
 
         public virtual ICollection<Supervisor> Supervisors { get; set; }
     }

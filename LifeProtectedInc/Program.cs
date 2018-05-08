@@ -4,8 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
+using LifeProtectedInc.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace LifeProtectedInc
@@ -14,7 +16,26 @@ namespace LifeProtectedInc
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            var host = BuildWebHost(args);
+
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                try
+                {
+                    var context = services.GetRequiredService<LifeContext>();
+                    //Creating a more complex data model - comment out line below
+                    DbInitializer.Initialize(context);
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+
+            host.Run();
+            //BuildWebHost(args).Run(); -> old code
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
