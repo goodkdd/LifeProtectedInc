@@ -1,13 +1,57 @@
 ﻿@{
     ViewData["Title"] = "Welcome";
 }
-<h2>@ViewData["Welcome"]</h2>
+<div class="container my-4 ">
+    <h2>Welcome</h2>
 
+    <br />
 
-<div class="card border-dark mb-3" style="max-width: 18rem;">
-    <div class="card-header">Header</div>
-    <div class="card-body text-dark">
-        <h5 class="card-title">Dark card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card border-info mb-3" style="max-width: 18rem;">
+                @*<div class="card-header">Clients</div>*@
+                <div class="card-body text-info card text-center">
+                    <h5 class="card-title">Clients</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a class="btn btn-info" asp-area="" asp-controller="Client" asp-action="Index">Go to Client</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="card border-danger mb-3" style="max-width: 18rem;">
+                @*<div class="card-header">Staff Members</div>*@
+                <div class="card-body text-danger card text-center">
+                    <h5 class="card-title">Staff Members</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a class="btn btn-danger" asp-area="" asp-controller="StaffMember" asp-action="Index">Go to Staff Members</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="card border-success mb-3" style="max-width: 18rem;">
+                @*<div class="card-header">Supervisor</div>*@
+                <div class="card-body text-success card text-center">
+                    <h5 class="card-title">Supervisor</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a class="btn btn-success" asp-area="" asp-controller="Supervisor" asp-action="Index">Go to Supervisor</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                @*<div class="card-header">Inventories</div>*@
+                <div class="card-body text-dark card text-center">
+                    <h5 class="card-title">Inventories</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a class="btn btn-dark" asp-area="" asp-controller="Inventory" asp-action="Index">Go to Inventories</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+
+
