@@ -33,104 +33,103 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-    <body>
+<body>
 
 
-        @*<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <a class="navbar-brand" asp-controller="" asp-action=""> LifeProtectedInc</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
+    @*<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" asp-controller="" asp-action=""> LifeProtectedInc</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
 
-                            <a class="nav-link" asp-area="" asp-controller="Client" asp-action="Index">Clients</a>
-                            <a class="nav-link" asp-area="" asp-controller="StaffMember" asp-action="Index">Staff Members</a>
-                            <a class="nav-link" asp-area="" asp-controller="Supervisor" asp-action="Index">Supervisors</a>
-                            <a class="nav-link" asp-area="" asp-controller="Inventory" asp-action="Index">Inventories</a>
-                        </li>
+                        <a class="nav-link" asp-area="" asp-controller="Client" asp-action="Index">Clients</a>
+                        <a class="nav-link" asp-area="" asp-controller="StaffMember" asp-action="Index">Staff Members</a>
+                        <a class="nav-link" asp-area="" asp-controller="Supervisor" asp-action="Index">Supervisors</a>
+                        <a class="nav-link" asp-area="" asp-controller="Inventory" asp-action="Index">Inventories</a>
+                    </li>
 
-                    </ul>
-                    @await Html.PartialAsync("_LoginPartial")
+                </ul>
+                @await Html.PartialAsync("_LoginPartial")
 
-                </div>
-            </nav>*@
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
-                <a class="navbar-brand" asp-controller="Home" asp-action="About"> LifeProtectedInc</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Client" asp-action="Index">Clients</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="StaffMember" asp-action="Index">Staff Members</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Supervisor" asp-action="Index">Supervisors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Inventory" asp-action="Index">Inventories</a>
-                        </li>
-                    </ul>
-                    @await Html.PartialAsync("_LoginPartial")
-                </div>
-            </nav>
-        </header>
+            </div>
+        </nav>*@
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+            <a class="navbar-brand" asp-controller="Home" asp-action="About"> LifeProtectedInc</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Client" asp-action="Index">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="StaffMember" asp-action="Index">Staff Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Supervisor" asp-action="Index">Supervisors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Inventory" asp-action="Index">Inventories</a>
+                    </li>
+                </ul>
+                @*@await Html.PartialAsync("_LoginPartial")*@
+            </div>
+        </nav>
+    </header>
 
-        <section>
-            @RenderBody()
-
-        </section>
-
-        <environment include="Development">
-            <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
-            <script src="~/vendor/bootstrap/js/popper.js"></script>
-            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-            <script src="~/vendor/select2/select2.min.js"></script>
-            <script src="~/js/main.js"></script>
-            <script src="~/js/site.js" asp-append-version="true"></script>
-        </environment>
+    <section>
+        @RenderBody()
+    </section>
 
 
-        <environment exclude="Development">
-            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                    asp-fallback-test="window.jQuery"
-                    crossorigin="anonymous"
-                    integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-            </script>
+    <environment include="Development">
+        <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+        <script src="~/vendor/bootstrap/js/popper.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/vendor/select2/select2.min.js"></script>
+        <script src="~/js/main.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
 
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-                    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-                    crossorigin="anonymous" asp-fallback-src="~/lib/popper.js/dist/popper.min.js" asp-fallback-test="window.Popper">
-            </script>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
 
 
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-                    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-                    crossorigin="anonymous"
-                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-            </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+                integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+                crossorigin="anonymous" asp-fallback-src="~/lib/popper.js/dist/popper.min.js" asp-fallback-test="window.Popper">
+        </script>
 
-            <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"
-                    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-                    crossorigin="anonymous"
-                    asp-fallback-src="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
-                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-            </script>
 
-            <script src="/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+                integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+                crossorigin="anonymous"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
 
-        </environment>
+        <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"
+                integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+                crossorigin="anonymous"
+                asp-fallback-src="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
 
-        @RenderSection("Scripts", required: false)
-    </body>
+        <script src="/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU"></script>
 
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
 </html>
