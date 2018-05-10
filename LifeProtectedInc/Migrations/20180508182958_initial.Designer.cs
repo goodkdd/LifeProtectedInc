@@ -11,7 +11,7 @@ using System;
 namespace LifeProtectedInc.Migrations
 {
     [DbContext(typeof(LifeContext))]
-    [Migration("20180508180836_initial")]
+    [Migration("20180508182958_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -70,7 +70,7 @@ namespace LifeProtectedInc.Migrations
                     b.Property<int>("InventoryID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ProductAmount")
+                    b.Property<decimal>("ProductAmount")
                         .HasColumnType("money");
 
                     b.Property<string>("ProductName")

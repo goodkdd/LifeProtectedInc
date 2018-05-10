@@ -15,7 +15,7 @@ namespace LifeProtectedInc.Migrations
                 {
                     InventoryID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ProductAmount = table.Column<int>(type: "money", nullable: false),
+                    ProductAmount = table.Column<decimal>(type: "money", nullable: false),
                     ProductName = table.Column<string>(maxLength: 50, nullable: false),
                     ProductNo = table.Column<int>(nullable: false)
                 },
