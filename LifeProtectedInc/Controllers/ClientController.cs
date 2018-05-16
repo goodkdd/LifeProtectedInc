@@ -19,14 +19,14 @@ namespace LifeProtectedInc.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         // GET: Client
         public async Task<IActionResult> Index()
         {
             var lifeContext = _context.Clients.Include(c => c.StaffMember).Include(c => c.Supervisor);
             return View(await lifeContext.ToListAsync());
         }
-
+        [Authorize]
         // GET: Client/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -46,7 +46,7 @@ namespace LifeProtectedInc.Controllers
 
             return View(client);
         }
-
+        [Authorize]
         // GET: Client/Create
         public IActionResult Create()
         {
@@ -72,7 +72,7 @@ namespace LifeProtectedInc.Controllers
             ViewData["SupervisorID"] = new SelectList(_context.Supervisors, "SupervisorID", "Email", client.SupervisorID);
             return View(client);
         }
-
+        [Authorize]
         // GET: Client/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -90,7 +90,7 @@ namespace LifeProtectedInc.Controllers
             ViewData["SupervisorID"] = new SelectList(_context.Supervisors, "SupervisorID", "Email", client.SupervisorID);
             return View(client);
         }
-
+        
         // POST: Client/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -127,7 +127,7 @@ namespace LifeProtectedInc.Controllers
             ViewData["SupervisorID"] = new SelectList(_context.Supervisors, "SupervisorID", "Email", client.SupervisorID);
             return View(client);
         }
-
+        [Authorize]
         // GET: Client/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

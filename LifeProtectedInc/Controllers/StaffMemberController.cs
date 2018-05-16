@@ -20,13 +20,13 @@ namespace LifeProtectedInc.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         // GET: StaffMember
         public async Task<IActionResult> Index()
         {
             return View(await _context.StaffMembers.ToListAsync());
         }
-
+        [Authorize]
         // GET: StaffMember/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -44,7 +44,7 @@ namespace LifeProtectedInc.Controllers
 
             return View(staffMember);
         }
-
+        [Authorize]
         // GET: StaffMember/Create
         public IActionResult Create()
         {
@@ -66,7 +66,7 @@ namespace LifeProtectedInc.Controllers
             }
             return View(staffMember);
         }
-
+        [Authorize]
         // GET: StaffMember/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -117,7 +117,7 @@ namespace LifeProtectedInc.Controllers
             }
             return View(staffMember);
         }
-
+        [Authorize]
         // GET: StaffMember/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

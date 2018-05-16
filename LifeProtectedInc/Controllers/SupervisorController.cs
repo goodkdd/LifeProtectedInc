@@ -20,14 +20,14 @@ namespace LifeProtectedInc.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         // GET: Supervisor
         public async Task<IActionResult> Index()
         {
             var lifeContext = _context.Supervisors.Include(s => s.Inventory);
             return View(await lifeContext.ToListAsync());
         }
-
+        [Authorize]
         // GET: Supervisor/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -46,7 +46,7 @@ namespace LifeProtectedInc.Controllers
 
             return View(supervisor);
         }
-
+        [Authorize]
         // GET: Supervisor/Create
         public IActionResult Create()
         {
@@ -70,7 +70,7 @@ namespace LifeProtectedInc.Controllers
             ViewData["InventoryID"] = new SelectList(_context.Inventories, "InventoryID", "ProductName", supervisor.InventoryID);
             return View(supervisor);
         }
-
+        [Authorize]
         // GET: Supervisor/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -123,7 +123,7 @@ namespace LifeProtectedInc.Controllers
             ViewData["InventoryID"] = new SelectList(_context.Inventories, "InventoryID", "ProductName", supervisor.InventoryID);
             return View(supervisor);
         }
-
+        [Authorize]
         // GET: Supervisor/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -142,7 +142,7 @@ namespace LifeProtectedInc.Controllers
 
             return View(supervisor);
         }
-
+        
         // POST: Supervisor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
