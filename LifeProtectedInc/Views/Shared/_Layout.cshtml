@@ -8,7 +8,7 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/fonts/font-awesome-4.7.0/css/font-awesome.css"/>
+        <link rel="stylesheet" href="~/fonts/font-awesome-4.7.0/css/font-awesome.css" />
         @*<link rel="stylesheet" href="~/fonts/fontawesome-free-5.0.10/fontawesome-free-5.0.10/web-fonts-with-css/css/fontawesome-all.css" />*@
         <link rel="stylesheet" type="text/css" href="~/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
         <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
@@ -36,27 +36,7 @@
     </environment>
 </head>
 <body>
-    @*<nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">LifeProtectedInc</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-                @await Html.PartialAsync("_LoginPartial")
-            </div>
-        </div>
-    </nav>*@
+
 
     <div class="limiter">
         <div class="container-login100" style="background-image: url('images/img-01.jpg');">
@@ -104,11 +84,11 @@
                 asp-fallback-src="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
         </script>
-      
+
         <script src="/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU"></script>
 
     </environment>
 
-            @RenderSection("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

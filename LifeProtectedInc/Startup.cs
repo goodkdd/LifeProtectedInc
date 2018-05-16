@@ -39,6 +39,15 @@ namespace LifeProtectedInc
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
+
+
+            // mwilliams: fixed custome login and authorize
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Home/Index";
+                //options.LogoutPath = "Home/LoggedOut";
+            });
+
             services.AddMvc();
         }
 

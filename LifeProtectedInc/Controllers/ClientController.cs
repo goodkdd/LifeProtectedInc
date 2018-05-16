@@ -7,13 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LifeProtectedInc.Data;
 using LifeProtectedInc.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LifeProtectedInc.Controllers
 {
     public class ClientController : Controller
     {
         private readonly LifeContext _context;
-
+       
         public ClientController(LifeContext context)
         {
             _context = context;
