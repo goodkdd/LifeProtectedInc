@@ -209,50 +209,50 @@ namespace LifeProtectedInc.Data
       //      }
       //      context.SaveChanges();
 
-            //===========================================Supervisor=============================================//
-            var supervisor = new Supervisor[]
-            {
-                new Supervisor
-                {
-                    FirstName ="Patrick",
-                    LastName ="Martin",
-                    Email ="Patrick@LifeProtectdInc.com",
-                    Phone ="506-740-0631",
-                    InventoryID =4
-                },
-                 new Supervisor
-                {
-                    FirstName ="Marc",
-                    LastName ="Williams",
-                    Email ="Marc@LifeProtectdInc.com",
-                    Phone ="506-123-4656",
-                    InventoryID =5
-                },
+      //      //===========================================Supervisor=============================================//
+      //      var supervisor = new Supervisor[]
+      //      {
+      //          new Supervisor
+      //          {
+      //              FirstName ="Patrick",
+      //              LastName ="Martin",
+      //              Email ="Patrick@LifeProtectdInc.com",
+      //              Phone ="506-740-0631",
+      //              InventoryID =4
+      //          },
+      //           new Supervisor
+      //          {
+      //              FirstName ="Marc",
+      //              LastName ="Williams",
+      //              Email ="Marc@LifeProtectdInc.com",
+      //              Phone ="506-123-4656",
+      //              InventoryID =5
+      //          },
 
-                 new Supervisor
-                {
-                    FirstName ="Quinton",
-                    LastName ="Savoie",
-                    Email ="Quinton@LifeProtectdInc.com",
-                    Phone ="506-975-3333",
-                    InventoryID =6
-                },
-                 new Supervisor
-                {
-                    FirstName ="Eughy",
-                    LastName ="Delscy",
-                    Email ="Eughy@LifeProtectdInc.com",
-                    Phone ="506-895-6985",
-                    InventoryID =7
-                }
+      //           new Supervisor
+      //          {
+      //              FirstName ="Quinton",
+      //              LastName ="Savoie",
+      //              Email ="Quinton@LifeProtectdInc.com",
+      //              Phone ="506-975-3333",
+      //              InventoryID =6
+      //          },
+      //           new Supervisor
+      //          {
+      //              FirstName ="Eughy",
+      //              LastName ="Delscy",
+      //              Email ="Eughy@LifeProtectdInc.com",
+      //              Phone ="506-895-6985",
+      //              InventoryID =7
+      //          }
 
 
-            };
-            foreach (Supervisor s in supervisor)
-            {
-                context.Supervisors.Add(s);
-            }
-            context.SaveChanges();
+      //      };
+      //      foreach (Supervisor s in supervisor)
+      //      {
+      //          context.Supervisors.Add(s);
+      //      }
+      //      context.SaveChanges();
 
             //===========================================Client=================================================//
 
@@ -269,7 +269,7 @@ namespace LifeProtectedInc.Data
                     PostalCode="E1C 0K6",
                     Email ="TheRock@awsome.com",
                     StaffMemberID=3,
-                    SupervisorID=4
+                    SupervisorID=7
                 },
 
                  new Client
@@ -282,7 +282,7 @@ namespace LifeProtectedInc.Data
                     PostalCode="E1C 0K6",
                     Email ="WilltheKill@dead.com",
                     StaffMemberID=4,
-                    SupervisorID=5
+                    SupervisorID=8
                 },
 
                     new Client
@@ -295,21 +295,21 @@ namespace LifeProtectedInc.Data
                     PostalCode="E1C 0P6",
                     Email ="Dovico@Dovico.com",
                     StaffMemberID=5,
-                    SupervisorID=6
+                    SupervisorID=13
                 },
 
-                 new Client
-                {
-                    Name ="RCMP",
-                    Phone ="506-905-6395",
-                    Address = "590 main drive",
-                    City = "Moncton",
-                    Province = "NB",
-                    PostalCode="E1C 9Y8",
-                    Email ="RCMP@Law.com",
-                    StaffMemberID=7,
-                    SupervisorID=8
-                },
+                // new Client
+                //{
+                //    Name ="RCMP",
+                //    Phone ="506-905-6395",
+                //    Address = "590 main drive",
+                //    City = "Moncton",
+                //    Province = "NB",
+                //    PostalCode="E1C 9Y8",
+                //    Email ="RCMP@Law.com",
+                //    StaffMemberID=7,
+                //    SupervisorID=8
+                //},
 
                  new Client
                 {
@@ -321,7 +321,7 @@ namespace LifeProtectedInc.Data
                     PostalCode="E1C 0P6",
                     Email ="LesterInc@Lester Inc.com",
                     StaffMemberID=8,
-                    SupervisorID=9
+                    SupervisorID=14
                 },
 
                  new Client
@@ -334,7 +334,7 @@ namespace LifeProtectedInc.Data
                     PostalCode="E1C 9Y8",
                     Email ="FireDept@Fire.com",
                     StaffMemberID=10,
-                    SupervisorID=10
+                    SupervisorID=7
                 }
 
             };

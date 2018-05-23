@@ -25,7 +25,8 @@ namespace LifeProtectedInc
                 {
                     var context = services.GetRequiredService<LifeContext>();
                     //Creating a more complex data model - comment out line below
-                    //DbInitializer.Initialize(context);
+                   // DbInitializer.Initialize(context);
+                    LifeDbInitializer.Initialize(services).Wait();
                 }
                 catch (Exception ex)
                 {

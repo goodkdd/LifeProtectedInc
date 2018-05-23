@@ -3,45 +3,55 @@
 @{
     ViewData["Title"] = "Inventory";
 }
+<div class="container my-4">
+    <div class="shadow-lg p-4 mb-5 bg-white rounded">
+        <h2>Inventory</h2>
 
-<h2>Inventory</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductNo)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProductAmount)
-                </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductAmount)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.InventoryID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.InventoryID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.InventoryID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        <p class="float-right p-2 border border-success rounded bg-success font-weight-bold">
+            <a asp-action="Create" class="alert-dark bg-transparent">Create New</a>
+
+        </p>
+
+
+        <div class="table-responsive">
+            <table class="table" id="tablesorted">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProductNo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProductName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProductAmount)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProductNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProductName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProductAmount)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.InventoryID" class="btn btn-default bg-secondary alert-dark">Edit</a> 
+                                <a asp-action="Details" asp-route-id="@item.InventoryID" class="btn btn-default bg-secondary alert-dark">Details</a> 
+                                <a asp-action="Delete" asp-route-id="@item.InventoryID" class="btn btn-default bg-danger alert-dark">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

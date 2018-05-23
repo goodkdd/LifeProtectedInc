@@ -4,83 +4,90 @@
     ViewData["Title"] = "Clients";
 }
 <div class="container my-4">
-<h2>Clients</h2>
+    <div class="shadow-lg p-4 mb-5 bg-white rounded">
+        <h2>Clients</h2>
+        @if (User.IsInRole("admin"))
+        {
+        <p class="float-right p-2 border border-success rounded bg-success font-weight-bold">
+            <a asp-action="Create" class="alert-dark bg-transparent"> Create New</a>
+        </p>
+        }
+        
+        <div class="table-responsive">
+            <table class="table" id="tablesorted">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Phone)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.Address)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.City)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Province)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PostalCode)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.StaffMember)
+                        </th>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i> Create New</a>
-</p>
-    <div class="table-responsive">
-<table id="tablesorted" class="table table-bordered">
-    <thead class="thead-dark">
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Phone)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Address)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.City)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Province)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PostalCode)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StaffMember)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Supervisor)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Province)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PostalCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StaffMember.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Supervisor.Email)
-            </td>
-            <td class="ico-danger text-nowrap">
-                <a class="ico-success" title="Edit Client" asp-action="Edit" asp-route-id="@item.ClientID"><i class="fa fa-edit"></i>Edit</a> |
-                <a class="ico-info" title="Client Details" asp-action="Details" asp-route-id="@item.ClientID"><i class="fa fa-search-plus"></i>Details</a> |
-                <a class="ico-danger" title="Delete Client" asp-action="Delete" asp-route-id="@item.ClientID"><i class="fa fa-trash-alt"></i>Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            @*<td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.City)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Province)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PostalCode)
+                            </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StaffMember.Email)
+                            </td>
+
+                            <td>
+                                @if (User.IsInRole("admin"))
+                                {
+                                    <a asp-action="Edit" asp-route-id="@item.ClientID" class="btn btn-default bg-secondary alert-dark">Edit</a> 
+                                    <a asp-action="Details" asp-route-id="@item.ClientID" class="btn btn-default bg-secondary alert-dark">Details</a>
+                                    <a asp-action="Delete" asp-route-id="@item.ClientID" class="btn btn-default bg-danger alert-dark">Delete</a>
+                                }
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
+
+    </div>

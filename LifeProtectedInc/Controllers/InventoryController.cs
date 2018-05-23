@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace LifeProtectedInc.Controllers
 {
-    
+    [Authorize(Roles = "admin")]
     public class InventoryController : Controller
     {
         private readonly LifeContext _context;
@@ -26,6 +26,7 @@ namespace LifeProtectedInc.Controllers
         {
             return View(await _context.Inventories.ToListAsync());
         }
+        
         [Authorize]
         // GET: Inventory/Details/5
         public async Task<IActionResult> Details(int? id)

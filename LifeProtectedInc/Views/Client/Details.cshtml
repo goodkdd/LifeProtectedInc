@@ -4,74 +4,78 @@
     ViewData["Title"] = "Details";
 }
 <div class="container my-4">
-<h2>Details</h2>
+    <div class="shadow-lg p-4 mb-5 bg-white rounded">
 
-<div>
-    <h4>Client</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-8">
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.City)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.City)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Province)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Province)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.PostalCode)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PostalCode)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.StaffMember)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.StaffMember.Email)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Supervisor)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Supervisor.Email)
-        </dd>
-    </dl>
+        <h2>Client</h2>
+        <h3>Details</h3>
+
+
+
+        <hr class="bg-dark" />
+        <div class="row">
+            <div class="col-md-8">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Phone)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Address)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.City)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.City)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Province)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Province)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PostalCode)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.PostalCode)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.StaffMember)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.StaffMember.Email)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Supervisor)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Supervisor.Email)
+                    </dd>
+                </dl>
+            </div>
         </div>
+        <hr class="bg-dark" />
+
+        <a asp-action="Edit" asp-route-id="@Model.ClientID" class="btn btn-default alert-dark bg-success alert-dark font-weight-bold">Edit</a>
+        <a asp-action="Index" class="btn btn-default bg-light alert-dark font-weight-bold">Back to List</a>
+
     </div>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ClientID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
 </div>

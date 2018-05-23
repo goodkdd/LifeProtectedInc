@@ -39,8 +39,8 @@ namespace LifeProtectedInc.Data
                     user = new ApplicationUser
                     {
                         UserName = "admin@LifeProtected.com",
-                        Email = "admin@LifeProtected.com"
-
+                        Email = "admin@LifeProtected.com",
+                     
                     };
                     //Add it to the database
                     await userManager.CreateAsync(user, "Admin@123456");

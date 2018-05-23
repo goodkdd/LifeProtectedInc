@@ -8,6 +8,7 @@ namespace LifeProtectedInc.Models
 {
     public class Supervisor
     {
+        [Display(Name = "Supervisor Code")]
         public int SupervisorID { get; set; }//Pk
 
         [Required]

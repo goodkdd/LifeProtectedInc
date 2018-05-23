@@ -42,12 +42,12 @@ namespace LifeProtectedInc.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-
+        [Display(Name = "Consultant")]
         public int StaffMemberID { get; set; }//Fk
         public int SupervisorID { get; set; }//Fk
 
 
-
+        [Display(Name = "Consultant")]
         public virtual StaffMember StaffMember { get; set; }
         public virtual Supervisor Supervisor { get; set; }
 
